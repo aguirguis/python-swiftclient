@@ -506,6 +506,11 @@ class SwiftService(object):
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.thread_manager.__exit__(exc_type, exc_val, exc_tb)
 
+    def echo(self, str):
+        #A function to print the given string...only used for testing purposes
+        print("Hello from the python client service layer")
+        print("Your string is: ", str)
+
     # Stat related methods
     #
     def stat(self, container=None, objects=None, options=None):
