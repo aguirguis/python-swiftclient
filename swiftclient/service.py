@@ -827,7 +827,6 @@ class SwiftService(object):
                         headers.update(
                             split_headers(obj_options['header'], '')
                         )
-
                 post = self.thread_manager.object_uu_pool.submit(
                     self._post_object_job, container, obj,
                     headers, response_dict
