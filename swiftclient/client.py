@@ -1536,6 +1536,7 @@ def post_object(url, token, container, name, headers, http_conn=None,
 
     if resp.status < 200 or resp.status >= 300:
         raise ClientException.from_response(resp, 'Object POST failed', body)
+    return resp, body
 
 
 def copy_object(url, token, container, name, destination=None,

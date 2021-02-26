@@ -882,8 +882,9 @@ class SwiftService(object):
             'response_dict': result
         }
         try:
-            conn.post_object(
+            resp, body = conn.post_object(
                 container, obj, headers=headers, response_dict=result)
+            res.update({"result":body})
         except Exception as err:
             traceback, err_time = report_traceback()
             logger.exception(err)
